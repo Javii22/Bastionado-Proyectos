@@ -1,0 +1,89 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="codelablinux"
+                  title=""
+                  environment="web"
+                  feedback-link="https://github.com/Javii22/Bastionado-Proyectos.git">
+    
+      <google-codelab-step label="Sección 1" duration="0">
+        <h2 is-upgraded>Arranque seguro en Linux</h2>
+<p>Antes de empezar debemos configurar las particiones en la siguiente imagen pongo como se deberia poner cada partición:</p>
+<p class="image-container"><img alt="Ejemplo de particiones necesarias" src="img\\3fbabd48321b5cb6.png"></p>
+<p>Le damos ha hecho, luego nos pedira los tipicos datos de registros los rellenamos y le damos ha instalar.</p>
+<p><img alt="Instalando el SO" src="img\\738e04ed0ee65774.png"> Esperamos aprox 2 min y ya tendriamos la maquina lista.</p>
+<p>En la siguiente seccion vamos ha realizar la Procteccion de BIOS/UEFI.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Sección 2" duration="0">
+        <p>Ejecutamos este comando para el arrance con contraseña</p>
+<pre><code language="language-bash" class="language-bash">nano /etc/default/grub
+</code></pre>
+<p class="image-container"><img alt="comando" src="img\\5a4f79475024903c.png"></p>
+<p>Le damos enter y te saldra esta ventana:</p>
+<p class="image-container"><img alt="comando" src="img\\1e932c39e6c2f1a.png"></p>
+<p>Aqui modificados el GRUB_TIME_OUT=5 y quitamos el 5 y ponemos 0</p>
+<p class="image-container"><img alt="comando" src="img\\d639a2c2a5dc8c5.png"></p>
+<p>Guardamos cambios con Ctrl-O, y salimos del editor de nano con Ctrl-X.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Seccion 3" duration="0">
+        <p>Recuerda que es necesario regenerar fichero para guardar cambios con este comando:</p>
+<pre><code language="language-bash" class="language-bash">sudo update-grub
+</code></pre>
+<p class="image-container"><img alt="comando" src="img\\e49cef20fef7347a.png"></p>
+<p>Para proteger el arranque con contraseña debemos ejecutar este comando:</p>
+<pre><code language="language-bash" class="language-bash">sudo nano /etc/grub.d/40_custom
+</code></pre>
+<p class="image-container"><img alt="comando" src="img\\42dbff6a20ec00c.png"></p>
+<p>Cuando le damos al enter nos aparecera un editor diferente: <img alt="comando" src="img\\1d6156b1471b3ffd.png"></p>
+<p>Agregamos al final set superusers=&#34;root&#34; y password root CONTRASEÑA. Recuerda que es necesario regenerar fichero para guardar cambios:</p>
+<p>En este caso de user &#34;root&#34; y de password &#34;1234&#34;</p>
+<pre><code language="language-bash" class="language-bash">sudo update-grub
+</code></pre>
+<p class="image-container"><img alt="comando" src="img\\e49cef20fef7347a.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Seccion Final" duration="0">
+        <p>Aqui se finalizaria el arranque seguro de Linux.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
